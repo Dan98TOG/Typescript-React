@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.calculator-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.selector-container {
+  background: white;
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  gap: 4px;
+}
+
+.selector-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #666;
+}
+
+.selector-btn.active {
+  background: #4f46e5;
+  color: white;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+  transform: translateY(-1px);
+}
+
+.selector-btn:hover:not(.active) {
+  background: #f3f4f6;
+}
+
+.calculator-container {
+  display: flex;
+  justify-content: center;
+}
+
+.calculator {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+.calculator.scientific {
+  max-width: 600px;
+}
+
+.display {
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: 600;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mode-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  background: #f59e0b;
+  color: white;
+}
+
+.mode-btn:not(.active) {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.mode-btn:hover {
+  transform: translateY(-1px);
+}
+
+.scientific-functions {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-number {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.btn-number:hover {
+  background: #e5e7eb;
+}
+
+.btn-operator {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-operator:hover {
+  background: #2563eb;
+}
+
+.btn-equals {
+  background: #10b981;
+  color: white;
+}
+
+.btn-equals:hover {
+  background: #059669;
+}
+
+.btn-clear {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-clear:hover {
+  background: #dc2626;
+}
+
+.btn-function {
+  background: #8b5cf6;
+  color: white;
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+.btn-function:hover {
+  background: #7c3aed;
+}
+
+.btn-constant {
+  background: #f59e0b;
+  color: white;
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+.btn-constant:hover {
+  background: #d97706;
+}
+
+.btn-secondary {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #4b5563;
+}
+
+.btn-zero {
+  grid-column: span 2;
+}
+
+.btn-plus {
+  grid-row: span 2;
+}
+
+.btn-clear-wide {
+  grid-column: span 2;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: white;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .calculator {
+    padding: 16px;
+  }
+  
+  .display {
+    font-size: 1.5rem;
+    min-height: 60px;
+  }
+  
+  .btn {
+    min-height: 48px;
+    font-size: 1rem;
+  }
+  
+  .scientific-functions {
+    gap: 6px;
+  }
+  
+  .button-grid {
+    gap: 8px;
+  }
+}
